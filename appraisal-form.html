@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Property Appraisal Form</title>
+</head>
+<body>
+  <form id="appraisalForm" name="appraisalForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" name="First Name" id="firstName" required><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="Last Name" id="lastName" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="Email" id="email" required><br>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" name="Phone" id="phone"><br>
+
+    <label for="propertyAddress">Property Address:</label>
+    <input type="text" name="Property Address" id="propertyAddress" required><br>
+
+    <label for="propertyType">Property Type:</label>
+    <input type="text" name="Property Type" id="propertyType"><br>
+
+    <label for="bedrooms">Bedrooms:</label>
+    <input type="number" name="Bedrooms" id="bedrooms"><br>
+
+    <label for="bathrooms">Bathrooms:</label>
+    <input type="number" name="Bathrooms" id="bathrooms"><br>
+
+    <label for="carSpaces">Car Spaces:</label>
+    <input type="number" name="Car Spaces" id="carSpaces"><br>
+
+    <label for="additionalComments">Additional Comments:</label>
+    <textarea name="Additional Comments" id="additionalComments"></textarea><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwfU9lqmwd1G3np-rPcumXgLPOtg3s-wPuIUM4KkCCtEcaV3KhkDqnMhRXjX5v8YJ3LLg/exec';
+    const form = document.forms['appraisalForm'];
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thank you! Your form has been submitted successfully."))
+        .catch(error => alert("There was an error submitting the form. Please try again."));
+    });
+  </script>
+</body>
+</html>
