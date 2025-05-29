@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Request a Property Appraisal | Ray White Double Bay</title>
+  <title>Property Appraisal | Ray White Double Bay</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
@@ -10,35 +10,50 @@
       font-family: 'Lato', sans-serif;
       background-color: #ffffff;
       color: #595959;
-      padding: 40px 20px;
+      padding: 0;
       margin: 0;
     }
 
+    .banner {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+    }
+
+    .intro {
+      padding: 24px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .form-wrapper {
+      background: #ffffff;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+    }
+
     h1 {
-      font-size: 28px;
+      font-size: 20px;
       margin-bottom: 20px;
       text-align: center;
       font-weight: 700;
     }
 
     form {
-      max-width: 600px;
-      margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 18px;
     }
 
-    .form-wrapper {
-      background: #ffffff;
-      border: 1px solid #e0e0e0;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-    }
-
     label {
       font-weight: 600;
+      display: block;
     }
 
     input, textarea {
@@ -49,6 +64,7 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       background-color: #fefefe;
+      box-sizing: border-box;
     }
 
     textarea {
@@ -57,7 +73,7 @@
     }
 
     button {
-      margin-top: 30px;
+      margin-top: 20px;
       background-color: #ffe512;
       color: #595959;
       border: none;
@@ -66,7 +82,6 @@
       font-weight: 700;
       border-radius: 4px;
       cursor: pointer;
-      width: 100%;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -88,11 +103,38 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    @media screen and (max-width: 600px) {
+      .intro {
+        font-size: 15px;
+        padding: 16px;
+      }
+
+      button {
+        font-size: 15px;
+        padding: 12px 18px;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <img src="https://res.cloudinary.com/ddo6csdew/image/upload/v1748476840/EP_appraisal_banner_fflztk.png" alt="Appraisal Banner" class="banner">
+
+  <div class="intro">
+    <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">Why Get a Property Appraisal?</h2>
+    <p>
+      • Understand how much your home is worth<br>
+      • Get insights into buyer demand in your area<br>
+      • Receive advice on preparing your home for sale<br>
+      • No cost, no obligation—just professional guidance
+    </p>
+    <p>Fill in your details in the form below and we’ll provide you with a confidential digital appraisal.</p>
+  </div>
+
   <div class="form-wrapper">
-    <h1>Request a Property Appraisal</h1>
+    <h1>Your Contact Details</h1>
+
     <form id="appraisalForm" name="appraisalForm">
       <label>First Name
         <input type="text" name="First Name" required>
@@ -166,5 +208,6 @@
         .catch(error => alert("There was an error submitting the form. Please try again."));
     });
   </script>
+
 </body>
 </html>
